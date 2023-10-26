@@ -5,6 +5,8 @@ import com.techproeducation.backendproject.initialwork.repository.ContactMessage
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ContactMessageService {
 
@@ -13,6 +15,9 @@ public class ContactMessageService {
 
     public void saveMessage(ContactMessage contactMessage) {
         contactMessageRepository.save(contactMessage);
+    }
 
+    public List<ContactMessage> getAllMessages() {
+       return contactMessageRepository.findAll();
     }
 }
